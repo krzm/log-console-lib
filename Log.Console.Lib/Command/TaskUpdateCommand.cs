@@ -1,9 +1,9 @@
-using CLI.Core.Lib;
-using Console.Lib;
+using CLIFramework;
+using CLIWizardHelper;
 using Log.Data;
 using System;
 
-namespace Log.Lib;
+namespace Log.Console.Lib;
 
 public class TaskUpdateCommand : DataCommand<Task>
 {

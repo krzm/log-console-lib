@@ -1,8 +1,8 @@
-﻿using CLI.Core.Lib;
-using Console.Lib;
+﻿using CLIFramework;
+using CLIWizardHelper;
 using System;
 
-namespace Log.Lib;
+namespace Log.Console.Lib;
 
 public class TaskInsertCommand : DataCommand<Data.Task>
 {

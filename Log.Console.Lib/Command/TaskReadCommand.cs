@@ -1,10 +1,10 @@
-﻿using CLI.Core.Lib;
-using Console.Lib;
+﻿using CLIFramework;
+using CRUDCommandHelper;
 using Log.Data;
 using Log.Modern.Lib;
 using System;
 
-namespace Log.Lib;
+namespace Log.Console.Lib;
 
 public class TaskReadCommand : DataCommand<Task>
 {

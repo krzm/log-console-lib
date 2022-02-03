@@ -1,8 +1,8 @@
-﻿using CLI.Core.Lib;
-using Console.Lib;
+﻿using CLIFramework;
+using CRUDCommandHelper;
 using Log.Data;
 
-namespace Log.Lib;
+namespace Log.Console.Lib;
 
 public class PlaceReadCommand : ReadCommand<Place>
 {

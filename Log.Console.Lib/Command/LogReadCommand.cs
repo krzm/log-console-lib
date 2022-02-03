@@ -1,11 +1,11 @@
-﻿using CLI.Core;
-using CLI.Core.Lib;
-using Console.Lib;
+﻿using CLIFramework;
+using CLIHelper;
+using CRUDCommandHelper;
 using Log.Data;
 using Log.Modern.Lib;
 using System;
 
-namespace Log.Lib;
+namespace Log.Console.Lib;
 
 public class LogReadCommand : DataCommand<LogModel>
 {
