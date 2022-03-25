@@ -4,7 +4,8 @@ using Log.Data;
 
 namespace Log.Console.Lib;
 
-public class CategoryReadCommand : ReadCommand<Category>
+public class CategoryReadCommand 
+    : ReadCommand<Category>
 {
     public CategoryReadCommand(
         TextCommand textCommand
