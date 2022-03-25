@@ -2,19 +2,18 @@
 using CLIHelper;
 using CRUDCommandHelper;
 using Log.Data;
-using Log.Modern.Lib;
 using System;
 
 namespace Log.Console.Lib;
 
 public class LogReadCommand : DataCommand<LogModel>
 {
-	private readonly IReadCommand<LogArgFilter> logReadCommand;
+	private readonly IReadCommand<LogFilter> logReadCommand;
 	private readonly IOutput output;
 
 	public LogReadCommand(
 		TextCommand textCommand
-		, IReadCommand<LogArgFilter> logReadCommand
+		, IReadCommand<LogFilter> logReadCommand
 		, IOutput output)
 			: base(textCommand)
 	{
@@ -38,6 +37,6 @@ public class LogReadCommand : DataCommand<LogModel>
 			else
 				dateParam = date;
 		}
-		logReadCommand.Read(new LogArgFilter() { Start = dateParam });
+		logReadCommand.Read(new LogFilter() { Start = dateParam });
 	}
 }

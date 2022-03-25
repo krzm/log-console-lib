@@ -1,27 +1,26 @@
 ﻿using CLIFramework;
 using CRUDCommandHelper;
 using Log.Data;
-using Log.Modern.Lib;
 using System;
 
 namespace Log.Console.Lib;
 
 public class TaskReadCommand : DataCommand<Task>
 {
-    private readonly IReadCommand<TaskArgFilter> logReadCommand;
+    private readonly IReadCommand<TaskFilter> readCommand;
 
     public TaskReadCommand(
 		TextCommand textCommand
-		, IReadCommand<TaskArgFilter> logReadCommand)
+		, IReadCommand<TaskFilter> readCommand)
 			: base(textCommand)
 	{
-		ArgumentNullException.ThrowIfNull(logReadCommand);
+		ArgumentNullException.ThrowIfNull(readCommand);
 
-        this.logReadCommand = logReadCommand;
+        this.readCommand = readCommand;
     }
 
 	public override void Execute(object parameter)
 	{
-		logReadCommand.Read(default);
+		readCommand.Read(new TaskFilter());
 	}
 }
