@@ -5,30 +5,31 @@ using System;
 
 namespace Log.Console.Lib;
 
-public class LogInsertCommand : DataCommand<LogModel>
+public class LogUpdateCommand 
+	: DataCommand<LogModel>
 {
-    private readonly IInsertWizard<LogModel> logInsertWizard;
+    private readonly IUpdateWizard<LogModel> updateWizard;
     private ICommandRunner commandRunner;
 
-	public LogInsertCommand(
-		TextCommand command
-		, IInsertWizard<LogModel> logInsertWizard)
-			: base(command)
+	public LogUpdateCommand(
+		TextCommand textCommand
+		, IUpdateWizard<LogModel> updateWizard)
+			: base(textCommand)
 	{
-		ArgumentNullException.ThrowIfNull(logInsertWizard);
+		ArgumentNullException.ThrowIfNull(updateWizard);
 
-        this.logInsertWizard = logInsertWizard;
-    } 
-	
+        this.updateWizard = updateWizard;
+    }
+
 	public void SetCommandRunner(ICommandRunner commandRunner)
 	{
 		ArgumentNullException.ThrowIfNull(commandRunner);
 		this.commandRunner = commandRunner;
 	}
-	
+
 	public override void Execute(object parameter)
 	{
-		logInsertWizard.Insert();
+		updateWizard.Update();
 		commandRunner.RunCommand("log");
 	}
 }

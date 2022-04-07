@@ -4,7 +4,8 @@ using Log.Data;
 
 namespace Log.Console.Lib;
 
-public class PlaceUpdateCommand : UpdateCommand<Place>
+public class PlaceUpdateCommand 
+    : UpdateCommand<Place>
 {
     public PlaceUpdateCommand(
         TextCommand textCommand

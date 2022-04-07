@@ -4,7 +4,8 @@ using System;
 
 namespace Log.Console.Lib;
 
-public class TaskInsertCommand : DataCommand<Data.Task>
+public class TaskInsertCommand 
+	: DataCommand<Data.Task>
 {
     private readonly IInsertWizard<Data.Task> taskInsertWizard;
     private ICommandRunner commandRunner;

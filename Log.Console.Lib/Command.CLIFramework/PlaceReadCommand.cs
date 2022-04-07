@@ -4,7 +4,8 @@ using Log.Data;
 
 namespace Log.Console.Lib;
 
-public class PlaceReadCommand : ReadCommand<Place>
+public class PlaceReadCommand 
+    : ReadCommand<Place>
 {
     public PlaceReadCommand(
         TextCommand textCommand

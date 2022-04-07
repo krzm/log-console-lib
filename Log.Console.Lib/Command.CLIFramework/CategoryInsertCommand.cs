@@ -4,7 +4,8 @@ using Log.Data;
 
 namespace Log.Console.Lib;
 
-public class CategoryInsertCommand : InsertCommand<Category>
+public class CategoryInsertCommand 
+    : InsertCommand<Category>
 {
     public CategoryInsertCommand(
         TextCommand textCommand

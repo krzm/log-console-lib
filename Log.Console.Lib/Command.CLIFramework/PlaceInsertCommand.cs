@@ -4,7 +4,8 @@ using Log.Data;
 
 namespace Log.Console.Lib;
 
-public class PlaceInsertCommand : InsertCommand<Place>
+public class PlaceInsertCommand 
+    : InsertCommand<Place>
 {
     public PlaceInsertCommand(
         TextCommand textCommand

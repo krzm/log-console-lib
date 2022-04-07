@@ -5,7 +5,8 @@ using System;
 
 namespace Log.Console.Lib;
 
-public class TaskReadCommand : DataCommand<Task>
+public class TaskReadCommand 
+	: DataCommand<Task>
 {
     private readonly IReadCommand<TaskFilter> readCommand;
 

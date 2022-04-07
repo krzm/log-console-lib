@@ -5,7 +5,8 @@ using System;
 
 namespace Log.Console.Lib;
 
-public class TaskUpdateCommand : DataCommand<Task>
+public class TaskUpdateCommand 
+	: DataCommand<Task>
 {
     private readonly IUpdateWizard<Task> updateWizard;
     private ICommandRunner commandRunner;

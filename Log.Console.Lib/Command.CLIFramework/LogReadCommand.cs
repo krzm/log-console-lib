@@ -6,7 +6,8 @@ using System;
 
 namespace Log.Console.Lib;
 
-public class LogReadCommand : DataCommand<LogModel>
+public class LogReadCommand 
+	: DataCommand<LogModel>
 {
 	private readonly IReadCommand<LogFilter> logReadCommand;
 	private readonly IOutput output;

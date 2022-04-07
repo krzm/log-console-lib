@@ -4,7 +4,8 @@ using Log.Data;
 
 namespace Log.Console.Lib;
 
-public class CategoryUpdateCommand : UpdateCommand<Category>
+public class CategoryUpdateCommand 
+    : UpdateCommand<Category>
 {
     public CategoryUpdateCommand(
         TextCommand textCommand
