@@ -6,6 +6,7 @@ namespace Log.Console.Lib;
 
 public class LogInsertCommand 
 	: DataCommand<LogModel>
+        , IDataCommand
 {
     private readonly IInsertWizard<LogModel>? logInsertWizard;
     private ICommandRunner? commandRunner;

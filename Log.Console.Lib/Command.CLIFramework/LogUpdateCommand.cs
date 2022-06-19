@@ -6,6 +6,7 @@ namespace Log.Console.Lib;
 
 public class LogUpdateCommand 
 	: DataCommand<LogModel>
+        , IDataCommand
 {
     private readonly IUpdateWizard<LogModel>? updateWizard;
     private ICommandRunner? commandRunner;
