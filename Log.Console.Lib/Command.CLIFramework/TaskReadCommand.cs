@@ -1,10 +1,11 @@
 ﻿using CLIFramework;
 using CRUDCommandHelper;
+using Task = Log.Data.Task;
 
 namespace Log.Console.Lib;
 
 public class TaskReadCommand 
-	: DataCommand<Data.Task>
+	: DataCommand<Task>
 {
     private readonly IReadCommand<TaskFilter> readCommand;
 

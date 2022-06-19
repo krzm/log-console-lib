@@ -1,18 +1,19 @@
 using CLIFramework;
 using CLIWizardHelper;
-using Log.Data;
+using Task = Log.Data.Task;
 
 namespace Log.Console.Lib;
 
 public class TaskUpdateCommand 
-	: DataCommand<Data.Task>
+	: DataCommand<Task>
+        , IDataCommand
 {
-    private readonly IUpdateWizard<Data.Task> updateWizard;
+    private readonly IUpdateWizard<Task> updateWizard;
     private ICommandRunner? commandRunner;
 
 	public TaskUpdateCommand(
 		TextCommand textCommand
-		, IUpdateWizard<Data.Task> updateWizard)
+		, IUpdateWizard<Task> updateWizard)
 		: base(textCommand)
 	{
         this.updateWizard = updateWizard;
@@ -28,6 +29,6 @@ public class TaskUpdateCommand
 	public override void Execute(object? parameter)
 	{
 		updateWizard.Update();
-		commandRunner?.RunCommand(nameof(Data.Task).ToLowerInvariant());
+		commandRunner?.RunCommand(nameof(Task).ToLowerInvariant());
 	}
 }

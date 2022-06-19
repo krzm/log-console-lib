@@ -1,17 +1,19 @@
 ﻿using CLIFramework;
 using CLIWizardHelper;
+using Task = Log.Data.Task;
 
 namespace Log.Console.Lib;
 
 public class TaskInsertCommand 
-	: DataCommand<Data.Task>
+	: DataCommand<Task>
+        , IDataCommand
 {
-    private readonly IInsertWizard<Data.Task> taskInsertWizard;
+    private readonly IInsertWizard<Task> taskInsertWizard;
     private ICommandRunner? commandRunner;
 
 	public TaskInsertCommand(
 		TextCommand textCommand
-        , IInsertWizard<Data.Task> taskInsertWizard) 
+        , IInsertWizard<Task> taskInsertWizard) 
 		    : base(textCommand)
 	{
         this.taskInsertWizard = taskInsertWizard;
