@@ -1,10 +1,8 @@
-using System;
 using System.Linq.Expressions;
 using Log.Data;
 
 namespace Log.Console.Lib;
 
-#nullable enable
 public class LogFiltrator 
     : IFilterFactory<LogModel, LogFilter>
 {
@@ -19,8 +17,8 @@ public class LogFiltrator
             return l => 
                 l.Start.HasValue ? 
                     l.Start.Value.Date.Equals(dateFilter)  
-                        && l.Task.CategoryId == filter.CategoryId.Value : 
-                    l.Task.CategoryId == filter.CategoryId.Value;
+                        && l.Task!.CategoryId == filter.CategoryId.Value : 
+                    l.Task!.CategoryId == filter.CategoryId.Value;
         }
         return l => 
             l.Start.HasValue ? 

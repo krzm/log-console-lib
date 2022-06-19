@@ -1,15 +1,14 @@
 ﻿using CLIFramework;
 using CLIWizardHelper;
 using Log.Data;
-using System;
 
 namespace Log.Console.Lib;
 
 public class LogInsertCommand 
 	: DataCommand<LogModel>
 {
-    private readonly IInsertWizard<LogModel> logInsertWizard;
-    private ICommandRunner commandRunner;
+    private readonly IInsertWizard<LogModel>? logInsertWizard;
+    private ICommandRunner? commandRunner;
 
 	public LogInsertCommand(
 		TextCommand command
@@ -27,9 +26,9 @@ public class LogInsertCommand
 		this.commandRunner = commandRunner;
 	}
 	
-	public override void Execute(object parameter)
+	public override void Execute(object? parameter)
 	{
-		logInsertWizard.Insert();
-		commandRunner.RunCommand("log");
+		logInsertWizard?.Insert();
+		commandRunner?.RunCommand("log");
 	}
 }

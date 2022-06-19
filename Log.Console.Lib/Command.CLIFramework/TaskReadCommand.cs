@@ -1,12 +1,10 @@
 ﻿using CLIFramework;
 using CRUDCommandHelper;
-using Log.Data;
-using System;
 
 namespace Log.Console.Lib;
 
 public class TaskReadCommand 
-	: DataCommand<Task>
+	: DataCommand<Data.Task>
 {
     private readonly IReadCommand<TaskFilter> readCommand;
 
@@ -15,12 +13,11 @@ public class TaskReadCommand
 		, IReadCommand<TaskFilter> readCommand)
 			: base(textCommand)
 	{
-		ArgumentNullException.ThrowIfNull(readCommand);
-
         this.readCommand = readCommand;
+		ArgumentNullException.ThrowIfNull(this.readCommand);
     }
 
-	public override void Execute(object parameter)
+	public override void Execute(object? parameter)
 	{
 		readCommand.Read(new TaskFilter());
 	}

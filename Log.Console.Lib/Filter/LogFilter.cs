@@ -1,9 +1,7 @@
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Log.Console.Lib;
 
-#nullable enable
 public class LogFilter 
 {
     private const string IdError = "Id must be greater than zero";

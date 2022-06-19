@@ -2,7 +2,6 @@
 using CLIHelper;
 using CRUDCommandHelper;
 using Log.Data;
-using System;
 
 namespace Log.Console.Lib;
 
@@ -25,8 +24,7 @@ public class LogReadCommand
 		this.output = output;
 	}
 
-	//todo: this needs refactoring
-	public override void Execute(object parameter)
+	public override void Execute(object? parameter)
 	{
 		var @params = parameter as string[];
 		DateTime? dateParam = default;

@@ -1,15 +1,14 @@
 ﻿using CLIFramework;
 using CLIWizardHelper;
 using Log.Data;
-using System;
 
 namespace Log.Console.Lib;
 
 public class LogUpdateCommand 
 	: DataCommand<LogModel>
 {
-    private readonly IUpdateWizard<LogModel> updateWizard;
-    private ICommandRunner commandRunner;
+    private readonly IUpdateWizard<LogModel>? updateWizard;
+    private ICommandRunner? commandRunner;
 
 	public LogUpdateCommand(
 		TextCommand textCommand
@@ -27,9 +26,9 @@ public class LogUpdateCommand
 		this.commandRunner = commandRunner;
 	}
 
-	public override void Execute(object parameter)
+	public override void Execute(object? parameter)
 	{
-		updateWizard.Update();
-		commandRunner.RunCommand("log");
+		updateWizard?.Update();
+		commandRunner?.RunCommand("log");
 	}
 }
